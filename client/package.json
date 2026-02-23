@@ -1,0 +1,62 @@
+{
+  "name": "geomoment-client",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GeoMoment — Temporally-indexed geo-experience map frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\""
+  },
+  "keywords": [
+    "geomoment",
+    "geospatial",
+    "heatmap",
+    "crowd-sourced",
+    "experience-map",
+    "react",
+    "google-maps",
+    "deck.gl"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@deck.gl/core": "^9.2.8",
+    "@deck.gl/google-maps": "^9.2.8",
+    "@deck.gl/layers": "^9.2.8",
+    "@tailwindcss/vite": "^4.2.0",
+    "@vis.gl/react-google-maps": "^1.7.1",
+    "axios": "^1.13.5",
+    "date-fns": "^4.1.0",
+    "deck.gl": "^9.2.8",
+    "framer-motion": "^12.34.3",
+    "ngeohash": "^0.6.3",
+    "notistack": "^3.0.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.71.1",
+    "react-router-dom": "^7.13.0",
+    "tailwindcss": "^4.2.0",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "prettier": "^3.8.1",
+    "vite": "^7.3.1"
+  }
+}
