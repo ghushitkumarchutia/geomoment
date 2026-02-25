@@ -26,8 +26,10 @@ const getRouteVibeScore = asyncHandler(async (req, res) => {
     {
       $match: {
         geohashCell: { $in: uniqueHashes },
-        dayOfWeek: day,
-        hourSlot: hour,
+        $and: [
+          { $or: [{ dayOfWeek: day }, { dayOfWeek: -1 }] },
+          { $or: [{ hourSlot: hour }, { hourSlot: -1 }] },
+        ],
       },
     },
     {

@@ -97,8 +97,9 @@ const getHeatmap = asyncHandler(async (req, res) => {
   const conditions = [];
 
   if (day !== -1) conditions.push({ $or: [{ dayOfWeek: day }, { dayOfWeek: -1 }] });
-  if (hour !== -1)
+  if (hour !== -1) {
     conditions.push({ $or: [{ hourSlot: { $in: getSlotHours(hour) } }, { hourSlot: -1 }] });
+  }
 
   if (conditions.length > 0) matchStage.$and = conditions;
 
@@ -186,7 +187,10 @@ const deleteMoment = asyncHandler(async (req, res) => {
   }
 
   await moment.deleteOne();
-  await User.findByIdAndUpdate(req.user._id, { $inc: { momentCount: -1 } });
+
+  await User.findByIdAndUpdate(req.user._id, [
+    { $set: { momentCount: { $max: [{ $subtract: ['$momentCount', 1] }, 0] } } },
+  ]);
 
   return success(res, null);
 });

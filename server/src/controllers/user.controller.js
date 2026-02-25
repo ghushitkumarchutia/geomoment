@@ -24,7 +24,7 @@ const getMyMoments = asyncHandler(async (req, res) => {
   });
 });
 
-const getProfile = asyncHandler(async (req, res) => {
+const getProfile = asyncHandler((req, res) => {
   return success(res, {
     name: req.user.name,
     email: req.user.email,
