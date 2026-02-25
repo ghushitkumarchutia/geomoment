@@ -188,9 +188,13 @@ const deleteMoment = asyncHandler(async (req, res) => {
 
   await moment.deleteOne();
 
-  await User.findByIdAndUpdate(req.user._id, [
-    { $set: { momentCount: { $max: [{ $subtract: ['$momentCount', 1] }, 0] } } },
-  ]);
+  await User.findByIdAndUpdate(req.user._id, {
+    $inc: { momentCount: -1 },
+  });
+  await User.updateOne(
+    { _id: req.user._id, momentCount: { $lt: 0 } },
+    { $set: { momentCount: 0 } }
+  );
 
   return success(res, null);
 });
