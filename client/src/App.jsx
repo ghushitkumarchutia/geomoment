@@ -11,7 +11,6 @@ import Spinner from './components/ui/Spinner';
 import HomePage from './pages/HomePage';
 
 const ExplorePage = lazy(() => import('./pages/ExplorePage'));
-const RouteComparePage = lazy(() => import('./pages/RouteComparePage'));
 const MyMomentsPage = lazy(() => import('./pages/MyMomentsPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
@@ -99,7 +98,6 @@ function AppShell() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/explore" element={<ExplorePage />} />
-          <Route path="/compare" element={<RouteComparePage />} />
           <Route path="/my-moments" element={<MyMomentsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<NotFoundPage />} />

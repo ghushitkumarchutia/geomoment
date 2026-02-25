@@ -9,7 +9,6 @@ import ProfileMenu from '../auth/ProfileMenu';
 const NAV_LINKS = [
   { to: '/', label: 'Map' },
   { to: '/explore', label: 'Explore' },
-  { to: '/compare', label: 'Compare' },
 ];
 
 export default function Navbar() {
