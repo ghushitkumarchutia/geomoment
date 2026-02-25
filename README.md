@@ -346,7 +346,7 @@ npm run format:check # Prettier check
 | Service           | Purpose          | Recommended                |
 | ----------------- | ---------------- | -------------------------- |
 | **Vercel**        | Frontend hosting | Auto-deploy from `client/` |
-| **Railway**       | Backend hosting  | Auto-deploy from `server/` |
+| **Render**        | Backend hosting  | Auto-deploy from `server/` |
 | **MongoDB Atlas** | Database         | Free M0 tier with 2dsphere |
 
 The backend exposes a `GET /api/health` endpoint for deployment platform health checks.
