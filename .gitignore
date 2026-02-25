@@ -3,3 +3,4 @@ dist/
 .env
 .DS_Store
 *.log
+GeoMoment_Development_Plan.md
